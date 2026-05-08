@@ -26,7 +26,6 @@ jobs:
         name: Run the tests
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout respository
         uses: actions/checkout@v3
@@ -47,8 +46,8 @@ jobs:
       - name: Checkout respository
         uses: ./.github/actions/checkout-and-setu
       - run: npm test -- --coverage
-      - uses: actions/upload-artifact@v3
       - name: Generate coverage report
+        uses: actions/upload-artifact@v3
         with:
           name: coverage-report
           path: coverage
